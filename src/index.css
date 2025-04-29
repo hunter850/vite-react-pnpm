@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme inline {
+    --react-blue: #646cff;
+    --text-black: #213547;
+    --animate-logo-spin: self-spin infinite 20s linear;
+    --animate-spinner-spin: self-spin infinite 1s linear;
+
+    @keyframes self-spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
+
+@layer base {
+
+    button:not(:disabled),
+    [data-slot="button"]:not(:disabled) {
+        @apply cursor-pointer;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    span {
+        @apply text-(--text-black);
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
