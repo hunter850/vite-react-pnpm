@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 function Greeting(): React.JSX.Element {
     useEffect(() => {
-        console.log("HELLO: ", process.env.VITE_HELLO);
+        console.log("HELLO: ", import.meta.env.VITE_HELLO);
     }, []);
 
     return (
