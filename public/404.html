@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite + React + TS</title>
+    </head>
+
+    <body>
+        <div id="root"></div>
+        <script>
+            (function () {
+                const repoName = "/vite-react-pnpm";
+                const fullPath = window.location.pathname;
+                const origin = window.location.origin;
+
+                // 使用正則表達式檢查路徑是否以repoName開頭
+                const repoNameRegex = new RegExp("^" + repoName);
+
+                if (repoNameRegex.test(fullPath)) {
+                    // 如果路徑以repoName開頭，去除repoName後的路徑
+                    const pathAfterRepo = fullPath.replace(repoNameRegex, "");
+                    // 移除開頭的斜線（如果有）
+                    const cleanPath = pathAfterRepo.replace(/^\//, "");
+
+                    if (cleanPath) {
+                        window.location.href = origin + repoName + "/#/" + cleanPath;
+                    } else {
+                        window.location.href = origin + repoName + "/#";
+                    }
+                } else {
+                    // 如果路徑不以repoName開頭，使用完整路徑
+                    const cleanPath = fullPath.replace(/^\//, "");
+
+                    if (cleanPath) {
+                        window.location.href = origin + repoName + "/#/" + cleanPath;
+                    } else {
+                        window.location.href = origin + repoName + "/#";
+                    }
+                }
+            })();
+        </script>
+    </body>
+</html>
