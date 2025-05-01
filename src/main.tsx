@@ -6,7 +6,7 @@ import App from "./App.tsx";
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <BrowserRouter basename={import.meta.env.DEV ? "/" : "/vite-react-pnpm"}>
+        <BrowserRouter basename={import.meta.env.DEV ? undefined : "/vite-react-pnpm"}>
             <App />
         </BrowserRouter>
     </StrictMode>

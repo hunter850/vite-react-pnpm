@@ -6,7 +6,7 @@ import path from "path";
 // https://vite.dev/config/
 export default defineConfig({
     plugins: [react(), tailwindcss()],
-    base: process.env.NODE_ENV === "production" ? "/vite-react-pnpm/" : "",
+    base: process.env.NODE_ENV === "production" ? "/vite-react-pnpm/" : undefined,
     resolve: {
         alias: {
             "@": path.resolve(__dirname, "./src"),
