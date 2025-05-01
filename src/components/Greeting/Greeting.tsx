@@ -1,8 +1,9 @@
 import { useEffect } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useSearchParams, useParams } from "react-router-dom";
 
 function Greeting(): React.JSX.Element {
     const [searchParams] = useSearchParams();
+    const { geetingWord } = useParams();
     const name = searchParams.get("name");
 
     useEffect(() => {
@@ -11,7 +12,9 @@ function Greeting(): React.JSX.Element {
 
     return (
         <main className="mx-auto min-h-[calc(100vh-48px)] max-w-xl content-center p-8 text-center">
-            <h1 className="text-5xl font-bold">Hello {`${name ? name : "Anonymous"}`}</h1>
+            <h1 className="text-5xl font-bold">
+                {geetingWord ?? "Hello"} {`${name ? name : "Anonymous"}`}
+            </h1>
         </main>
     );
 }

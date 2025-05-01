@@ -14,6 +14,7 @@ function App() {
                 <Route element={<BasicLayout />}>
                     <Route path="/" element={<Home />} />
                     <Route path="/greeting" element={<Greeting />} />
+                    <Route path="/greeting/:geetingWord" element={<Greeting />} />
                 </Route>
             </Routes>
         </ErrorBoundary>
